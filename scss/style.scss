@@ -1,0 +1,114 @@
+$primary-color: #6c5ce7;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	background: #fc466b; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3f5efb, #fc466b); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#3f5efb,
+		#fc466b
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h1,
+h2 {
+	font-weight: 900;
+	text-transform: capitalize;
+	margin: 0;
+}
+p {
+	margin: 0;
+}
+main.calculator-container {
+	flex-basis: 400px;
+	padding: 2rem;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .5);
+	div.calculator-header {
+		padding: 1.5rem;
+		color: white;
+		text-align: center;
+		background-color: $primary-color;
+		border-radius: 10px;
+		margin-bottom: 1rem;
+		h1 {
+			letter-spacing: 1px;
+		}
+	}
+	div.calculator-content:last-of-type label.input-container {
+		flex-wrap: wrap;
+	}
+	div.calculator-content {
+		margin-bottom: 1rem;
+		label.input-container {
+			display: flex;
+			justify-content: space-between;
+			input {
+				width: 10ch;
+				border: none;
+				padding: 0;
+				font-size: 1rem;
+				font-weight: 900;
+				text-align: right;
+				color: $primary-color;
+				font-family: 'Montserrat', sans-serif;
+				&::placeholder {
+					color: $primary-color;
+				}
+				&[type=number]::-webkit-inner-spin-button,
+				&[type=number]::-webkit-outer-spin-button {
+					-webkit-appearance: none;
+					-moz-appearance: textfield;
+				}
+				&[type=range] {
+					width: 100%;
+					height: 5px;
+					margin-top: 1rem;
+					position: relative;
+					background-color: #eee;
+					-webkit-appearance: none;
+					&::-webkit-slider-thumb {
+						-webkit-appearance: none;
+						appearance: none;
+						width: 15px;
+						height: 15px;
+						border-radius: 50%;
+						background: $primary-color;
+						cursor: pointer;
+					}
+				}
+			}
+			span.tooltip {
+				position: relative;
+				background-color: $primary-color;
+				padding: .5rem;
+				border-radius: 5px;
+				font-weight: 900;
+				letter-spacing: 1px;
+				color: white;
+				&:before {
+					top: -7px;
+					left: 50%;
+					content: '';
+					margin-left: -8px;
+					display: block;
+					position: absolute;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-bottom: 8px solid $primary-color;
+				}
+			}
+		}
+	}
+}

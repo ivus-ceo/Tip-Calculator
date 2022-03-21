@@ -1,0 +1,1 @@
+"use strict";function inputRangeTooltip(){var t=this;document.querySelectorAll(".input-container input[type=range]").forEach(function(n){t.addEventListener("input",function(n){console.log(n)})})}window.addEventListener("load",function(){inputRangeTooltip()});
